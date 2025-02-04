@@ -26,3 +26,5 @@ const LoginProvider = ({ children }: { children: ReactNode }) => {
         { children }
     </LoginContext.Provider>
 } 
+
+export { LoginContext, LoginProvider }
