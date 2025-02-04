@@ -1,9 +1,13 @@
-import { createContext, ReactNode, useState } from "react"
-import { ILogin, UsuarioLogin } from "../interfaces/ILogin"
+import { createContext, ReactNode, useState } from "react";
+import { ILogin, UsuarioLogin } from "../interfaces/ILogin";
 
-const LoginContext = createContext<ILogin | null>(null)
+interface LoginContextProps {
+    children: ReactNode;
+}
 
-const LoginProvider = ({ children }: { children: ReactNode }) => {
+const LoginContext = createContext< ILogin | null>(null)
+
+const LoginProvider  = ({ children }:LoginContextProps) => {
     
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         email: '', senha: '', nome: ''
@@ -19,20 +23,14 @@ const LoginProvider = ({ children }: { children: ReactNode }) => {
 
         setErro(false)
 
-        setUsuario({
-            email, senha, nome
-        })
+        setUsuario({ email, senha, nome })
 
-        return alert("O usuário pode realizar o login no sistema.")
+        return alert("O usuário está habilitado para realizar o login.")
     }
 
-    return (
-        <LoginContext.Provider value={{
-            usuario, erro, login
-        }}>
+    return(
+        <LoginContext.Provider value={{ usuario, erro, login }}>
             {children}
         </LoginContext.Provider>
     )
 }
-
-export { LoginContext, LoginProvider }
