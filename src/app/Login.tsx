@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Container } from "../components/container";
 import { useLogin } from "../hooks/useLotin";
 import { useState } from "react";
@@ -6,8 +6,8 @@ import { InputComponent } from "../components/Input";
 import { Btn } from "../components/Button";
 
 export default function Login() {
-    
-    const { erro, login } = useLogin();
+
+    const { erro, login } = useLogin()
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -16,12 +16,15 @@ export default function Login() {
         login(email, senha)
     }
 
+    const { page, containerTxt, txt } = styles
+
     return(
-        <View>
+        <View style={page}>
+
             <Container>
                 <InputComponent 
                     isPassword={false}
-                    placeholder="Digite seu email ou seu usuário"
+                    placeholder="Digite seu usuário ou email"
                     onChangeText={setEmail}
                 />
                 
@@ -31,24 +34,49 @@ export default function Login() {
                     onChangeText={setSenha}
                 />
             </Container>
-            
+
             <Container>
-                <Btn onPress={realizarLogin} titulo="Entrar" />
+                <Btn 
+                    titulo="Entrar"
+                    onPress={realizarLogin}
+                />
             </Container>
-            
+
             <Container>
                 {erro && (
-                    <View>
-                        <Text>Não possui conta?</Text>
-                        
+                    <View style={containerTxt}>
+                        <Text style={txt}>
+                            Não possui conta ?
+                        </Text>
+
                         <TouchableOpacity>
-                            <Text>
-                                Clique aqui e cadastre-se
+                            <Text style={txt}>
+                                Clique aqui para cadastrar-se
                             </Text>
                         </TouchableOpacity>
                     </View>
                 )}
             </Container>
+
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    page: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
+    },
+    containerTxt: {
+        width: '90%',
+        height: 'auto',
+        padding: 15,
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
+    },
+    txt: {
+        fontSize: 16,
+        textAlign: 'center'
+    }
+})
