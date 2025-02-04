@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Container } from "../components/container";
-import { useLogin } from "../hooks/useLotin";
+import { useLogin } from "../hooks/useLogin";
 import { useState } from "react";
 import { InputComponent } from "../components/Input";
 import { Btn } from "../components/Button";
