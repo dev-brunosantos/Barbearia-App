@@ -1,9 +1,10 @@
-import { createContext, ReactNode, useState } from "react";
-import { ILogin, UsuarioLogin } from "../interfaces/ILogin";
+import { createContext, ReactNode, useState } from "react"
+import { ILogin, UsuarioLogin } from "../interfaces/ILogin"
 
 const LoginContext = createContext<ILogin | null>(null)
 
 const LoginProvider = ({ children }: { children: ReactNode }) => {
+    
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         email: '', senha: '', nome: ''
     })
@@ -11,7 +12,7 @@ const LoginProvider = ({ children }: { children: ReactNode }) => {
     const [erro, setErro] = useState(false)
 
     const login = (email: string, senha: string, nome?: string) => {
-        if (email.trim() == "" || senha.trim() == "") {
+        if(email.trim() == "" || senha.trim() == "") {
             setErro(true)
             return alert("Todos os campos devem ser preenchidos.")
         }
@@ -19,13 +20,16 @@ const LoginProvider = ({ children }: { children: ReactNode }) => {
         setErro(false)
 
         setUsuario({
-            nome, email, senha
+            email, senha, nome
         })
 
-        return alert("Usuário pode realizar o login.")
+        return alert("O usuário pode realizar o login no sistema.")
     }
+
     return (
-        <LoginContext.Provider value={{ usuario, login, erro }}>
+        <LoginContext.Provider value={{
+            usuario, erro, login
+        }}>
             {children}
         </LoginContext.Provider>
     )
