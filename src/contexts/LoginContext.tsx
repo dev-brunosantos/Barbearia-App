@@ -18,6 +18,10 @@ const LoginProvider = ({ children }: { children: ReactNode }) => {
 
         setErro(false)
 
+        setUsuario({
+            nome, email, senha
+        })
+
         return alert("Usuário pode realizar o login.")
     }
     return (
