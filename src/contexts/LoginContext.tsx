@@ -34,3 +34,5 @@ const LoginProvider  = ({ children }:LoginContextProps) => {
         </LoginContext.Provider>
     )
 }
+
+export { LoginContext, LoginProvider }
