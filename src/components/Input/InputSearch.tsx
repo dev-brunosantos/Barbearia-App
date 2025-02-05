@@ -28,8 +28,8 @@ export const InputSearch = () => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
-        height: 40,
+        width: '80%',
+        height: 52,
         borderWidth: 1,
         paddingHorizontal: 10,
         flexDirection: 'row',
@@ -40,13 +40,15 @@ const styles = StyleSheet.create({
     input: {
         width: '100%',
         height: '100%',
-        paddingLeft: 15,
+        paddingLeft: 10,
         fontSize: 16,
     },
     btnBusca: {
         height: '100%',
-        padding: 10,
+        padding: 5,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        position: 'absolute',
+        right: 15
     }
 })
