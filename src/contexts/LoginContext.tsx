@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { ILogin, UsuarioLogin } from "../interfaces/ILogin";
 import { IReactProps } from "../interfaces/IReactProps";
+import { router } from "expo-router";
 
 // interface LoginContextProps {
 //     children: ReactNode;
@@ -27,7 +28,8 @@ const LoginProvider  = ({ children }:IReactProps) => {
 
         setUsuario({ email, senha, nome })
 
-        return alert("O usuário está habilitado para realizar o login.")
+        // return alert("O usuário está habilitado para realizar o login.")
+        return router.push('/(drawer)')
     }
 
     return(
