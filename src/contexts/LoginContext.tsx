@@ -1,13 +1,15 @@
 import { createContext, ReactNode, useState } from "react";
 import { ILogin, UsuarioLogin } from "../interfaces/ILogin";
+import { IReactProps } from "../interfaces/IReactProps";
 
-interface LoginContextProps {
-    children: ReactNode;
-}
+// interface LoginContextProps {
+//     children: ReactNode;
+// }
 
 const LoginContext = createContext< ILogin | null>(null)
 
-const LoginProvider  = ({ children }:LoginContextProps) => {
+// const LoginProvider  = ({ children }:LoginContextProps) => {
+const LoginProvider  = ({ children }:IReactProps) => {
     
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         email: '', senha: '', nome: ''
