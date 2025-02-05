@@ -6,13 +6,13 @@ interface InputProps extends TextInputProps {
     isPassword: boolean;
 }
 
-export const InputComponent = ({ isPassword }: InputProps) => {
+export const InputComponent = ({ isPassword, ...rest }: InputProps) => {
 
     const [icone, setIcone] = useState('eye-with-line')
     const [seguranca, setSeguranca] = useState(true)
 
     const verificarSenha = () => {
-        icone == 'eye-with-line' ? setIcone('eye-with-line') : setIcone('eye')
+        icone == 'eye-with-line' ? setIcone('eye') : setIcone('eye-with-line')
         setSeguranca(!seguranca)
     }
 
@@ -24,6 +24,7 @@ export const InputComponent = ({ isPassword }: InputProps) => {
             <View style={container}>
                 <TextInput
                     style={input}
+                    {...rest}
                     secureTextEntry={seguranca}
                 />
 
@@ -38,6 +39,7 @@ export const InputComponent = ({ isPassword }: InputProps) => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
+                {...rest}
             />
         </View>
     )
