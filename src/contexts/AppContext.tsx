@@ -1,14 +1,17 @@
 import { LoginProvider } from "./LoginContext";
 import { CadastroProvider } from "./CadastroContext";
 import { IReactProps } from "../interfaces/IReactProps";
+import { TemaProvider } from "./TemaContext";
 
 // export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-export const AppContextProvider = ({children}:IReactProps) => {
+export const AppContextProvider = ({ children }: IReactProps) => {
     return (
-        <LoginProvider>
-            <CadastroProvider>
-                {children}
-            </CadastroProvider>
-        </LoginProvider>
+        <TemaProvider>
+            <LoginProvider>
+                <CadastroProvider>
+                    {children}
+                </CadastroProvider>
+            </LoginProvider>
+        </TemaProvider>
     )
 }
