@@ -1,11 +1,8 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { TextInput, TouchableOpacity, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { InputStyles } from "@/src/styles/InputStyles";
 
 export const InputSearch = () => {
-
-    //const { container, input, btnBusca } = styles
-
     const { container, input, btnBusca  } = InputStyles
 
     const buscar = () => {
@@ -28,30 +25,3 @@ export const InputSearch = () => {
         </View>
     )
 }
-
-// const styles = StyleSheet.create({
-//     container: {
-//         width: '80%',
-//         height: 52,
-//         borderWidth: 1,
-//         paddingHorizontal: 10,
-//         flexDirection: 'row',
-//         alignItems: 'center',
-//         justifyContent: 'space-between',
-//         overflow: 'hidden'
-//     },
-//     input: {
-//         width: '100%',
-//         height: '100%',
-//         paddingLeft: 10,
-//         fontSize: 16,
-//     },
-//     btnBusca: {
-//         height: '100%',
-//         padding: 5,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         position: 'absolute',
-//         right: 15
-//     }
-// })
