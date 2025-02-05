@@ -41,10 +41,13 @@ const CadastroProvider = ({ children }: ContextProps) => {
     }
 
     const cadastrar = (nome: string, email: string, senha: string, confirmacao: string) => {
+
+        setUsuario({nome, email, senha})
+
         validarFormulario(nome, email, senha)
         verificarSenha(senha, confirmacao)
 
-        return router.push('Login')
+        return router.push('/Login')
     }
 
     return (
