@@ -7,7 +7,7 @@ export default function app() {
     useEffect(() => {
         function alterarTela() {
             setTimeout(() => {
-                return router.push('Login')
+                return router.push('/Login')
             }, 1000);
         }
 
