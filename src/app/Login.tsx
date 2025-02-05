@@ -4,6 +4,7 @@ import { useLogin } from "../hooks/useLogin";
 import { useState } from "react";
 import { InputComponent } from "../components/Input";
 import { Btn } from "../components/Button";
+import { router } from "expo-router";
 
 export default function Login() {
 
@@ -49,7 +50,7 @@ export default function Login() {
                             Não possui conta ?
                         </Text>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => router.push('/NovoUsuario')}>
                             <Text style={txt}>
                                 Clique aqui para cadastrar-se
                             </Text>
