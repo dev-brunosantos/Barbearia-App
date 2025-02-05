@@ -51,7 +51,7 @@ const CadastroProvider = ({ children }: IReactProps) => {
 
         return router.push('/Login')
     }
-
+    
     return (
         <CadastroContext.Provider value={{ usuario, validarFormulario, verificarSenha, cadastrar }}>
             {children}
