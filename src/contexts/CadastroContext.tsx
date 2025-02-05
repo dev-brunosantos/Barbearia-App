@@ -3,9 +3,9 @@ import { Cargos, IUsuario, UsuarioDocumentos } from "../interfaces/IUsuario";
 import { router } from "expo-router";
 import { IReactProps } from "../interfaces/IReactProps";
 
-interface ContextProps {
-    children: ReactNode
-}
+// interface ContextProps {
+//     children: ReactNode
+// }
 
 interface CadastroProps {
     usuario: IUsuario;
