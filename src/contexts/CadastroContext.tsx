@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { Cargos, IUsuario, UsuarioDocumentos } from "../interfaces/IUsuario";
 import { router } from "expo-router";
+import { IReactProps } from "../interfaces/IReactProps";
 
 interface ContextProps {
     children: ReactNode
@@ -22,7 +23,8 @@ interface CadastroProps {
 
 const CadastroContext = createContext<CadastroProps | null>(null)
 
-const CadastroProvider = ({ children }: ContextProps) => {
+// const CadastroProvider = ({ children }: ContextProps) => {
+const CadastroProvider = ({ children }: IReactProps) => {
 
     const [usuario, setUsuario] = useState<IUsuario>({
         nome: '', sobrenome: '', email: '', senha: ''
