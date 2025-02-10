@@ -11,7 +11,7 @@ export const Container = ({ children }:{children:ReactNode}) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
+        width: '90%',
         height: 'auto',
         paddingHorizontal: 10,
         paddingVertical: 20,
