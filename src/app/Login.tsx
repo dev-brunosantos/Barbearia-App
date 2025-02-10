@@ -5,10 +5,12 @@ import { useState } from "react";
 import { InputComponent } from "../components/Input";
 import { Btn } from "../components/Button";
 import { router } from "expo-router";
+import { useTema } from "../contexts/TemaContext";
 
 export default function Login() {
 
     const { erro, login } = useLogin()
+    const { tema } = useTema()
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -20,7 +22,7 @@ export default function Login() {
     const { page, containerTxt, txt } = styles
 
     return(
-        <View style={page}>
+        <View style={[page, { backgroundColor: tema.back }]}>
 
             <Container>
                 <InputComponent 
@@ -46,12 +48,12 @@ export default function Login() {
             <Container>
                 {erro && (
                     <View style={containerTxt}>
-                        <Text style={txt}>
+                        <Text style={[txt, { color: tema.txt }]}>
                             Não possui conta ?
                         </Text>
 
                         <TouchableOpacity onPress={() => router.push('/NovoUsuario')}>
-                            <Text style={txt}>
+                            <Text style={[txt , { color: tema.txt }]}>
                                 Clique aqui para cadastrar-se
                             </Text>
                         </TouchableOpacity>
