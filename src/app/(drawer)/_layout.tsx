@@ -6,6 +6,7 @@ export default function Layout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer>
             <Drawer.Screen name='/index' />
+            <Drawer.Screen name='/Usuario' />
             <Drawer.Screen name='/config' />
         </Drawer>
     </GestureHandlerRootView>
