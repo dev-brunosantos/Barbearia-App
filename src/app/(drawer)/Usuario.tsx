@@ -27,7 +27,7 @@ export default function Usuario() {
 
             <Btn 
                 titulo="Sair"
-                onPress={() => router.push('./login')}
+                onPress={() => router.push('../Login')}
             />
         </View>
     )
