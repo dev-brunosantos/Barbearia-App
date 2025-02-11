@@ -1,9 +1,9 @@
-interface Cores {
+export interface Cores {
     txt: string;
     back: string; 
 }
 
-interface Tema {
+export interface Tema {
     tema: Cores;
     alterarTema: (cores: Cores) => void;
 }
